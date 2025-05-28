@@ -27,9 +27,9 @@ public class ProductAPITest extends BaseTest {
 		System.out.println("id: "+p.getId());
 		System.out.println("title: "+p.getTitle());
 		System.out.println("price: "+p.getPrice());
-		System.out.println("discription: "+p.getDiscription());
+		System.out.println("discription: "+p.getDescription());
 		System.out.println("image: "+p.getImage());
-		System.out.println("catagory: "+p.getCatagory());
+		System.out.println("catagory: "+p.getCategory());
 		
 		
 		System.out.println("id: "+p.getRating().getRate());

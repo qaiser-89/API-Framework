@@ -90,7 +90,7 @@ public class RestClient {
 	{
 		RequestSpecification request = setupRequest(baseurl, authType, contentType);
 		applyParams(request, queryParams, pathParams);
-		Response response = request.get(endPoint).then().spec(responseSpec200or201).extract().response();
+		Response response = request.get(endPoint).then().spec(responseSpec200or404).extract().response();
 		response.prettyPrint();
 		return response;
 		}

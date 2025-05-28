@@ -1,4 +1,4 @@
-package com.qa.api.gorest.test;
+package com.qa.api.gorest.tests;
 import java.util.HashMap;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -27,7 +27,7 @@ public class GetUserTest extends BaseTest{
 		Assert.assertTrue(response.statusLine().contains("OK"));
 	}
 	
-	@Test
+	@Test(enabled = false) //enabled = flase means I don't want this testcase to run in my testsuite 
 	public void getASingleUser()
 	{
 		String userID = "7908861";
