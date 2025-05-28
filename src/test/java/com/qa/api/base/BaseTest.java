@@ -1,9 +1,17 @@
 package com.qa.api.base;
 
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.qa.api.client.RestClient;
 
+import io.qameta.allure.restassured.AllureRestAssured;
+import io.restassured.RestAssured;
+
+
+//@Listeners(ChainTestListener.class)
 public class BaseTest 
 {
 	
@@ -31,6 +39,13 @@ public class BaseTest
 	protected final static String ERGAST_CIRCUT_ENDPOINT = "api/f1/2017/circuits.xml";
 	
 	
+	
+	
+	@BeforeSuite
+	public void setAllureReport()
+	{
+		RestAssured.filters(new AllureRestAssured());
+	}
 	
 	@BeforeTest
 	public void setup()
