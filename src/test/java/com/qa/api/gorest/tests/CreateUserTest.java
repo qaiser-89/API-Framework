@@ -3,9 +3,9 @@ package com.qa.api.gorest.tests;
 import java.io.File;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.fasterxml.jackson.core.JsonTokenId;
 import com.qa.api.base.BaseTest;
 import com.qa.api.constants.AuthType;
 import com.qa.api.manager.ConfigManager;
@@ -28,12 +28,25 @@ public class CreateUserTest extends BaseTest {
 		ConfigManager.set("bearertoken", tokenId);
 	}
 	
-	@Test
-	public void createANewUser()
+	@DataProvider
+	public Object[][] setupData()
 	{
-		User user=new User(null, "Qaiser", StringUtil.getRandomEmail(), "male", "active");
+		
+		return new Object[][] {
+			{"Priyanka", "female", "active"},
+			{"Rajesh", "male", "active"},
+			{"Priyanka", "female", "inactive"}
+		};
+	}
+	
+	@Test(dataProvider = "setupData")
+	public void createANewUser(String Name, String Gender, String Status)
+	{
+		User user=new User(null, Name, StringUtil.getRandomEmail(), Gender, Status);
 		Response response = restClint.post(BASE_URL_GOREST, GOREST_USERS_ENDPOINT, user, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
-		Assert.assertEquals(response.body().jsonPath().getString("name"), "Qaiser");
+		Assert.assertEquals(response.body().jsonPath().getString("name"), Name);
+		Assert.assertEquals(response.body().jsonPath().getString("gender"), Gender);
+		Assert.assertEquals(response.body().jsonPath().getString("status"), Status);
 		Assert.assertNotNull(response.body().jsonPath().getString("id"));
 	}
 	
