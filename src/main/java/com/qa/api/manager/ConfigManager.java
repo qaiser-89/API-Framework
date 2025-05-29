@@ -17,9 +17,8 @@ public class ConfigManager
 		// env -- environment variable(system)
 		
 		String envName = System.getProperty("env", "prod");
-		System.out.println("Tests are Running on Env===="+envName);
-		
-		String filename = "config_"+ envName +".properties"; 
+		System.out.println("running tests on env: " + envName);
+		String fileName = "config_" + envName + ".properties"; // config_qa.properties
 		
 		InputStream input =	ConfigManager.class.getClassLoader().getSystemResourceAsStream("config/config.properties");
 		if (input != null) 

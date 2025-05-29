@@ -48,14 +48,13 @@ public class BaseTest
 	public void setAllureReport()
 	{
 		RestAssured.filters(new AllureRestAssured());
-		
+		BASE_URL_GOREST = ConfigManager.get("baseurl.gorest").trim();
 	}
 	
 	@BeforeTest
 	public void setup()
 	{
 		restClint = new RestClient();
-		BASE_URL_GOREST = ConfigManager.get("baseurl.gorest").trim();
 	}
 	
 	
