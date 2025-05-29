@@ -28,6 +28,7 @@ public class CreateUserTest extends BaseTest {
 		ConfigManager.set("bearertoken", tokenId);
 	}
 	
+//it's always better to create Dataprovider with 2d object array than using a excel file its faster
 	@DataProvider
 	public Object[][] setupData()
 	{

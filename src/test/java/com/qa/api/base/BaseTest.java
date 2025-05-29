@@ -1,11 +1,13 @@
 package com.qa.api.base;
 
+import java.io.ObjectInputFilter.Config;
+
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
-
 import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.qa.api.client.RestClient;
+import com.qa.api.manager.ConfigManager;
 
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
@@ -14,11 +16,12 @@ import io.restassured.RestAssured;
 //@Listeners(ChainTestListener.class)
 public class BaseTest 
 {
+	protected  static String BASE_URL_GOREST;
 	
 	protected RestClient restClint;
 	
 	//************API BaseURL*************//
-	protected final static String BASE_URL_GOREST = "https://gorest.co.in";
+	
 	
 	protected final static String BASE_URL_CONTACTS = "https://thinking-tester-contact-list.herokuapp.com";
 	
@@ -45,12 +48,14 @@ public class BaseTest
 	public void setAllureReport()
 	{
 		RestAssured.filters(new AllureRestAssured());
+		
 	}
 	
 	@BeforeTest
 	public void setup()
 	{
 		restClint = new RestClient();
+		BASE_URL_GOREST = ConfigManager.get("baseurl.gorest").trim();
 	}
 	
 	

@@ -37,7 +37,13 @@
 			<class name="com.qa.api.products.ProductAPITest" />
 		</classes>
 	</test>
-
+	
+		<test name="Contacts API Test - Get Product">
+		<classes>
+			<class name="com.qa.api.contacts.ContactsAPITests" />
+		</classes>
+	</test>
+	
 	<test name="Schema Test">
 		<classes>
 			<class name="com.qa.api.schema.test.GoRestUserAPISchemaTest" />
