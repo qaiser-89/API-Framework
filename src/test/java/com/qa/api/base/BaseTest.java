@@ -17,6 +17,7 @@ import io.restassured.RestAssured;
 public class BaseTest 
 {
 	protected  static String BASE_URL_GOREST;
+	protected static String BASE_URL_REQRES;
 	
 	protected RestClient restClint;
 	
@@ -49,6 +50,7 @@ public class BaseTest
 	{
 		RestAssured.filters(new AllureRestAssured());
 		BASE_URL_GOREST = ConfigManager.get("baseurl.gorest").trim();
+		BASE_URL_REQRES = ConfigManager.get("baseurl.reqres").trim();
 	}
 	
 	@BeforeTest
