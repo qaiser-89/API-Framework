@@ -5,12 +5,9 @@
 
 
 	<listeners>
-		 <listener class-name="com.aventstack.chaintest.plugins.ChainTestListener" 
-			/> 
+		 <listener class-name="com.aventstack.chaintest.plugins.ChainTestListener"/> 
 
 	</listeners>
-
-
 
 	<test name="Go Rest API Test - Get User">
 		<classes>
