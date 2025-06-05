@@ -12,7 +12,7 @@ import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 
 
-@Listeners(ChainTestListener.class)
+//@Listeners(ChainTestListener.class)
 public class BaseTest 
 {
 	protected  static String BASE_URL_GOREST;
