@@ -81,12 +81,12 @@
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/com.aventstack/chaintest-testng -->
-<dependency>
-    <groupId>com.aventstack</groupId>
-    <artifactId>chaintest-testng</artifactId>
-    <version>1.0.12</version>
-</dependency>
-    
+
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>chaintest-testng</artifactId>
+			<version>1.0.12</version>
+		</dependency>
     <dependency>
 			<groupId>io.qameta.allure</groupId>
 			<artifactId>allure-rest-assured</artifactId>
@@ -128,7 +128,8 @@
   <version>3.2.5</version>
   <configuration>
     <suiteXmlFiles>
-      <suiteXmlFile>src/test/resources/testrunner/testng_goRest.xml</suiteXmlFile>
+      <suiteXmlFile>src/test/resources/testrunner/testng_goRest.xml</suiteXmlFile> 
+      <!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> -->
     </suiteXmlFiles>
     <testNGArtifactName>org.testng:testng</testNGArtifactName>
   </configuration>
