@@ -1,5 +1,9 @@
 # Use Maven with OpenJDK 11 as the base image
+<<<<<<< HEAD
 FROM maven:3.6.3-openjdk-11
+=======
+FROM maven:3.11.0-openjdk-23
+>>>>>>> refs/remotes/origin/master
 
 # Set the working directory inside the container
 WORKDIR /app

@@ -16,11 +16,11 @@ public class ConfigManager
 		// default.
 		// env -- environment variable(system)
 		
-		/*String envName = System.getProperty("env", "prod");
+		String envName = System.getProperty("env", "prod");
 		System.out.println("running tests on env: " + envName);
-		String fileName = "config_" + envName + ".properties"; // config_qa.properties*/
-		
-		InputStream input =	ConfigManager.class.getClassLoader().getSystemResourceAsStream("./configs/config.properties");
+		String fileName = "config_" + envName + ".properties"; // config_qa.properties
+		InputStream input =	ConfigManager.class.getClassLoader().getSystemResourceAsStream(fileName);
+		//InputStream input =	ConfigManager.class.getClassLoader().getSystemResourceAsStream("./configs/config.properties");
 		if (input != null) 
 		{
 			try {

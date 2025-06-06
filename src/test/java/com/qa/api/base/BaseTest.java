@@ -12,21 +12,21 @@ import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 
 
-@Listeners(ChainTestListener.class)
+//@Listeners(ChainTestListener.class)
 public class BaseTest 
 {
-	//protected  static String BASE_URL_GOREST;
-	//protected static String BASE_URL_REQRES;
+	protected  static String BASE_URL_GOREST;
+	protected static String BASE_URL_REQRES;
 	
 	protected RestClient restClint;
 	
 	//************API BaseURL*************//
 	
-	protected final static String  BASE_URL_GOREST = "https://gorest.co.in";
-	protected final static String BASE_URL_CONTACTS = "https://thinking-tester-contact-list.herokuapp.com";
+	//protected final static String  BASE_URL_GOREST = "https://gorest.co.in";
+	//protected final static String BASE_URL_CONTACTS = "https://thinking-tester-contact-list.herokuapp.com";
 	
 	protected final static String BASE_URL_PRODUCTS = "https://fakestoreapi.com";
-	
+	protected final static String BASE_URL_CONTACTS = "https://thinking-tester-contact-list.herokuapp.com";
 	
 	protected final static String BASE_ERGAST_CIRCUT = "https://ergast.com";
 
@@ -48,8 +48,8 @@ public class BaseTest
 	public void setAllureReport()
 	{
 		RestAssured.filters(new AllureRestAssured());
-		//BASE_URL_GOREST = ConfigManager.get("baseurl.gorest").trim();
-		//BASE_URL_REQRES = ConfigManager.get("baseurl.reqres").trim();
+		BASE_URL_GOREST = ConfigManager.get("baseurl.gorest").trim();
+		BASE_URL_REQRES = ConfigManager.get("baseurl.reqres").trim();
 	}
 	
 	@BeforeTest
