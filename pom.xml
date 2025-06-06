@@ -109,9 +109,9 @@
   <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-compiler-plugin</artifactId>
-  <version>3.11.0</version>
+  <version>3.8.1</version>
   <configuration>
-    <release>23</release>
+    <release>11</release>
     <annotationProcessorPaths>
       <path>
         <groupId>org.projectlombok</groupId>
@@ -128,7 +128,8 @@
   <version>3.2.5</version>
   <configuration>
     <suiteXmlFiles>
-      <suiteXmlFile>src/test/resources/testrunner/testng_goRest.xml</suiteXmlFile>
+     <!-- <suiteXmlFile>src/test/resources/testrunner/testng_regression.xml</suiteXmlFile> -->
+      <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
     </suiteXmlFiles>
     <testNGArtifactName>org.testng:testng</testNGArtifactName>
   </configuration>
