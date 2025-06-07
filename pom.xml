@@ -128,13 +128,8 @@
   <version>3.2.5</version>
   <configuration>
     <suiteXmlFiles>
-<<<<<<< HEAD
-     <!-- <suiteXmlFile>src/test/resources/testrunner/testng_regression.xml</suiteXmlFile> -->
-      <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
-=======
       <suiteXmlFile>src/test/resources/testrunner/testng_goRest.xml</suiteXmlFile> 
       <!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> -->
->>>>>>> refs/remotes/origin/master
     </suiteXmlFiles>
     <testNGArtifactName>org.testng:testng</testNGArtifactName>
   </configuration>
